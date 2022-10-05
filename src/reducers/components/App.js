@@ -4,7 +4,6 @@ import { increment, decrement } from "../../actions";
 
 class App extends Component {
   render() {
-    console.log("this.state", this.state);
     const props = this.props;
     console.log("props", props);
     return (

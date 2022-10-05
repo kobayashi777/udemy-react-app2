@@ -7,7 +7,7 @@ import "./index.css";
 import App from "./reducers/components/App";
 import reportWebVitals from "./reportWebVitals";
 // import registerServiceWorker from "./registerServiceWorker";
-
+console.log("index.js1");
 const store = createStore(reducer);
 
 const container = document.getElementById("root");
