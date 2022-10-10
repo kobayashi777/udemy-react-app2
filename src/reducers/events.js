@@ -1,13 +1,14 @@
+import _ from "lodash";
 import { READ_EVENTS } from "../actions";
 
-export const counter = (state = {}, action) => {
-  console.log("counter");
+export const events = (events = {}, action) => {
+  console.log("events");
   switch (action.type) {
     case READ_EVENTS:
-      return state;
+      return _.mapKeys(action.response.data, "id");
     default:
-      return state;
+      return events;
   }
 };
 
-export default counter;
+export default events;
