@@ -1,20 +1,21 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
+import thunk from "redux-thunk";
 import reducer from "./reducers";
 import "./index.css";
-import App from "./reducers/components/App";
+import EventsIndex from "./reducers/components/events_index";
 import reportWebVitals from "./reportWebVitals";
 // import registerServiceWorker from "./registerServiceWorker";
 console.log("index.js1");
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(thunk));
 
 const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(
   <Provider store={store}>
-    <App />
+    <EventsIndex />
   </Provider>
 );
 // registerServiceWorker();
